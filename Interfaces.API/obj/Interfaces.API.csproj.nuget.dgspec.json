@@ -1,20 +1,93 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj": {}
+    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj": {
+    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj",
-        "projectName": "Interfaces.API",
-        "projectPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj",
-        "packagesPath": "C:\\Users\\thamindub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Interfaces.API\\obj\\",
+        "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thamindub\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.16.0-beta.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,6 +101,71 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj",
+        "projectName": "Interfaces.API",
+        "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Interfaces.API\\Interfaces.API.csproj",
+        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Interfaces.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

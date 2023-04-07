@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\thamindub\\.nuget\\packages\\": {}
+    "C:\\Users\\TD\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\thamindub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thamindub\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
