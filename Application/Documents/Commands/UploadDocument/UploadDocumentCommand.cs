@@ -18,7 +18,6 @@ public class UploadDocumentCommand : IRequest<Document>
     {
         private const string BlobStorageConnectionString =
             "DefaultEndpointsProtocol=https;AccountName=es001;AccountKey=ouz2feuhCKr/XSPMzgA6ADIwoxwmr5+sGWyJ6fYiS0E34U/R0zs1eM4sPtMj0CzJL0Q8aOEdTUBe+ASttcyCUA==;EndpointSuffix=core.windows.net";
-
         private const string BlobContainerName = "pdfdocuments";
         private readonly BlobContainerClient _storageClient;
 
@@ -41,11 +40,12 @@ public class UploadDocumentCommand : IRequest<Document>
             IDictionary<string, string> metadata = new Dictionary<string, string>();
             if (request.tags != null)
             {
-                metadata.Add("file_name", request.file.FileName);
-                metadata.Add("tags", String.Join(',', request.tags));
+                metadata.Add("fileName", request.file.FileName);
+                metadata.Add("tags", request.tags[0]);
+                metadata.Add("accessRoles", request.accessRoles[0]);
             }
-
             await blobClient.SetMetadataAsync(metadata);
+            
             return new Document()
             {
                 fileId = fileId,
