@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {}
+    "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {
+    "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Application\\obj\\",
+        "projectPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\thamindub\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thamindub\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj"
+              "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj"
               }
             }
           }
@@ -44,9 +44,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Azure.Messaging.EventHubs": {
+              "target": "Package",
+              "version": "[5.8.1, )"
+            },
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.16.0-beta.1, )"
+            },
+            "Ghostscript.NET": {
+              "target": "Package",
+              "version": "[1.2.3, )"
             },
             "MediatR": {
               "target": "Package",
@@ -55,6 +63,18 @@
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Tesseract": {
+              "target": "Package",
+              "version": "[5.2.0, )"
             }
           },
           "imports": [
@@ -77,17 +97,17 @@
         }
       }
     },
-    "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
+    "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TD\\Desktop\\Elasticsearch-CA\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\thamindub\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thamindub\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

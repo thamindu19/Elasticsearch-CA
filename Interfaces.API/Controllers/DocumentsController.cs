@@ -1,7 +1,9 @@
 ﻿
+using Application.Documents.Commands.PublishText;
 using Application.Documents.Commands.UploadDocument;
 using Microsoft.AspNetCore.Mvc;
 using Application.Documents.Queries.DownloadDocument;
+using Domain.Entities.Documents;
 using MediatR;
 
 namespace Interfaces.API.Controllers
@@ -17,7 +19,7 @@ namespace Interfaces.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("UploadDocument")]
+        [HttpPost]
         public async Task<ActionResult> UploadDocument([FromForm(Name = "file")] IFormFile file,
             [FromForm(Name = "tags")] string[] tags, [FromForm(Name = "accessRoles")] string[] accessRoles)
         {
@@ -25,12 +27,21 @@ namespace Interfaces.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("DownloadDocument")]
-        [Route("{fileId:int}")]
-        public async Task<ActionResult> DownloadDocument([FromRoute] Guid fileId)
+        [HttpGet]
+        public async Task<ActionResult> DownloadDocument([FromQuery] string fileId)
         {
-            var result = await _mediator.Send(new DownloadDocumentQuery() { fileId = fileId });
-            return Ok(result);
+            var fileStream = new DownloadDocumentQuery() { fileId = fileId };
+            return Ok(fileStream);
+        }
+        
+        [HttpPost("PublishText")]
+        public async Task<Document> ReadText([FromForm(Name = "fileId")] string fileId)
+        {
+            var document = await _mediator.Send(new PublishTextCommand()
+            {
+                fileId = fileId
+            });
+            return document;
         }
     }
 }
