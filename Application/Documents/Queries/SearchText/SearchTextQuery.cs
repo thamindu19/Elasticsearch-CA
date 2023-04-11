@@ -9,9 +9,9 @@ namespace Application.Documents.Queries.SearchText;
 
 public class SearchTextQuery : MediatR.IRequest<List<Document>>
 {
-    public string message;
-    public string[] tags;
-    public string userRole;
+    public string Message;
+    public string[] Tags;
+    public string UserRole;
 }
 
 public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Document>>
@@ -38,19 +38,19 @@ public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Docu
                     .Must(mu => mu
                         .Match(m => m
                             .Field(f => f.azure.eventhub.message)
-                            .Query(request.message)
+                            .Query(request.Message)
                         )
                     )
                     .Filter(fi => fi
                         .Terms(t => t
                             .Field(f => f.azure.eventhub.tags)
-                            .Terms(request.tags)
+                            .Terms(request.Tags)
                         )
                     )
                     .Filter(fi => fi
                         .Terms(t => t
                             .Field(f => f.azure.eventhub.access_roles)
-                            .Terms(request.userRole)
+                            .Terms(request.UserRole)
                         )
                     )
                 )
@@ -75,11 +75,11 @@ public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Docu
             {
                 var document = new Document
                 {
-                    fileId = doc.azure.eventhub.file_id,
-                    fileName = doc.azure.eventhub.file_name,
-                    tags = doc.azure.eventhub.tags,
-                    accessRoles = doc.azure.eventhub.access_roles,
-                    message = doc.azure.eventhub.message
+                    FileId = doc.azure.eventhub.file_id,
+                    FileName = doc.azure.eventhub.file_name,
+                    Tags = doc.azure.eventhub.tags,
+                    AccessRoles = doc.azure.eventhub.access_roles,
+                    Message = doc.azure.eventhub.message
                 };
                 documents.Add(document);
             }

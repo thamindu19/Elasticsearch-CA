@@ -3279,6 +3279,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "MediatR": "12.0.1",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {

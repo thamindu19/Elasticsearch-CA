@@ -6,7 +6,7 @@ namespace Application.Documents.Queries.DownloadDocument;
 
 public class DownloadDocumentQuery : IRequest<FileStreamResult>
 {
-    public string fileId { get; set; }
+    public string FileId { get; set; }
 }
 
 public class DownloadDocumentQueryHandler : IRequestHandler<DownloadDocumentQuery, FileStreamResult>
@@ -23,7 +23,7 @@ public class DownloadDocumentQueryHandler : IRequestHandler<DownloadDocumentQuer
     
     public async Task<FileStreamResult> Handle(DownloadDocumentQuery request, CancellationToken cancellationToken)
     {
-        var blobClient = _storageClient.GetBlobClient($"{request.fileId}.pdf");
+        var blobClient = _storageClient.GetBlobClient($"{request.FileId}.pdf");
         var blobProperties = await blobClient.GetPropertiesAsync();
         blobProperties.Value.Metadata.TryGetValue("file_name", out string? fileName);
         blobProperties.Value.Metadata.TryGetValue("tags", out string? tags);

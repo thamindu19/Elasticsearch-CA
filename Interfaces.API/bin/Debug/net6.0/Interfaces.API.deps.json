@@ -1604,6 +1604,7 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
+          "MediatR": "12.0.1",
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {

@@ -23,14 +23,14 @@ namespace Interfaces.API.Controllers
         public async Task<ActionResult> UploadDocument([FromForm(Name = "file")] IFormFile file,
             [FromForm(Name = "tags")] string[] tags, [FromForm(Name = "accessRoles")] string[] accessRoles)
         {
-            var result = await _mediator.Send(new UploadDocumentCommand() { file = file, tags = tags, accessRoles = accessRoles});
+            var result = await _mediator.Send(new UploadDocumentCommand() { File = file, Tags = tags, AccessRoles = accessRoles});
             return Ok(result);
         }
 
         [HttpGet]
         public async Task<ActionResult> DownloadDocument([FromQuery] string fileId)
         {
-            var fileStream = new DownloadDocumentQuery() { fileId = fileId };
+            var fileStream = new DownloadDocumentQuery() { FileId = fileId };
             return Ok(fileStream);
         }
         
@@ -39,7 +39,7 @@ namespace Interfaces.API.Controllers
         {
             var document = await _mediator.Send(new PublishTextCommand()
             {
-                fileId = fileId
+                FileId = fileId
             });
             return document;
         }

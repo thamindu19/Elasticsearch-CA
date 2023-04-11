@@ -5,8 +5,8 @@ namespace Application.Documents.Queries.DownloadDocument;
 
 public class DocumentDto : Document
 {
-    public string fileId { get; set; }
-    public string? fileName { get; set; }
-    public string[] tags { get; set; }
-    public FileStreamResult fileStream { get; set; }
+    public string FileId { get; set; }
+    public string? FileName { get; set; }
+    public string[] Tags { get; set; }
+    public FileStreamResult FileStream { get; set; }
 }

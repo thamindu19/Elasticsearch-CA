@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kADHnLexTYk6xEjFSvsOnNqL40toNA6mH5x0j6huZo+juOPNRFk42pbYzegDfn5kBfYUxe2xeyEPAFhYLMPjug==",
+  "dgSpecHash": "p24ojfMnkiZOQjWiswZzGQhPPV1eK46i82fUlSVxEbNH1A5P8KoWFNj9NLiEohQRDvogZv7+LgqQzkcK75a7NQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\thamindub\\Desktop\\Elasticsearch-CA\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\thamindub\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\thamindub\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\thamindub\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\thamindub\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []

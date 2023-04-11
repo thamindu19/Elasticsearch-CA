@@ -9,9 +9,9 @@ namespace Application.Documents.Commands.UploadDocument;
 
 public class UploadDocumentCommand : IRequest<Document>
 {
-    public IFormFile file { get; set; }
-    public string[] tags { get; set; }
-    public string[] accessRoles { get; set; 
+    public IFormFile File { get; set; }
+    public string[] Tags { get; set; }
+    public string[] AccessRoles { get; set; 
 }
 
     public class UploadDocumentCommandHandler : IRequestHandler<UploadDocumentCommand, Document>
@@ -32,26 +32,26 @@ public class UploadDocumentCommand : IRequest<Document>
             var blobName = $"{fileId}.pdf";
             BlobClient blobClient = _storageClient.GetBlobClient(blobName);
 
-            using (Stream stream = request.file.OpenReadStream())
+            using (Stream stream = request.File.OpenReadStream())
             {
                 await blobClient.UploadAsync(stream, true);
             }
 
             IDictionary<string, string> metadata = new Dictionary<string, string>();
-            if (request.tags != null)
+            if (request.Tags != null)
             {
-                metadata.Add("fileName", request.file.FileName);
-                metadata.Add("tags", request.tags[0]);
-                metadata.Add("accessRoles", request.accessRoles[0]);
+                metadata.Add("file_name", request.File.FileName);
+                metadata.Add("tags", request.Tags[0]);
+                metadata.Add("access_roles", request.AccessRoles[0]);
             }
             await blobClient.SetMetadataAsync(metadata);
             
             return new Document()
             {
-                fileId = fileId,
-                fileName = request.file.FileName,
-                tags = request.tags[0].Split(','),
-                accessRoles = request.accessRoles[0].Split(',')
+                FileId = fileId,
+                FileName = request.File.FileName,
+                Tags = request.Tags[0].Split(','),
+                AccessRoles = request.AccessRoles[0].Split(',')
             };
         }
     }

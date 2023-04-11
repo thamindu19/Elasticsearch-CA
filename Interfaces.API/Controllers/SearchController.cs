@@ -23,7 +23,7 @@ namespace Interfaces.API.Controllers
         {
             var documents = await _mediator.Send(new SearchTextQuery()
             {
-                message = message, tags = tags, userRole =
+                Message = message, Tags = tags, UserRole =
                     userRole
             });
             return Ok(documents);

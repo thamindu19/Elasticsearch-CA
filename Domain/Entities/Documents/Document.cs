@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Common;
 using Newtonsoft.Json;
 
 namespace Domain.Entities.Documents
 {
-    public class Document
+    public class Document : BaseEntity
     {
         [JsonProperty("file_id")]
-        public Guid fileId { get; set; }
+        public Guid FileId { get; set; }
         
         [JsonProperty("file_name")]
-        public string fileName { get; set; }
+        public string FileName { get; set; }
         
-        public string[] tags { get; set; }
+        [JsonProperty("tags")]
+        public string[] Tags { get; set; }
         
         [JsonProperty("access_roles")]
-        public string[] accessRoles { get; set; }
+        public string[] AccessRoles { get; set; }
         
-        public string message { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
     }
 }
