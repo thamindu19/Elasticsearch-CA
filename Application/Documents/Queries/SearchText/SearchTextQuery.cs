@@ -12,6 +12,7 @@ public class SearchTextQuery : MediatR.IRequest<List<Document>>
     public string Message;
     public string[] Tags;
     public string UserRole;
+    public string Group;
 }
 
 public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Document>>
@@ -31,6 +32,7 @@ public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Docu
     public async Task<List<Document>> Handle(SearchTextQuery request, CancellationToken cancellationToken)
     {
         var response = await _elasticClient.SearchAsync<EsDocument>(s => s
+            // .Index(request?.Index)
             .From(0)
             .Size(100)
             .Query(q => q
@@ -45,14 +47,12 @@ public class SearchTextQueryHandler : IRequestHandler<SearchTextQuery, List<Docu
                         .Terms(t => t
                             .Field(f => f.azure.eventhub.tags)
                             .Terms(request.Tags)
-                        )
-                    )
-                    .Filter(fi => fi
-                        .Terms(t => t
+                        ) && fi.Terms(t => t
                             .Field(f => f.azure.eventhub.access_roles)
                             .Terms(request.UserRole)
                         )
                     )
+                    
                 )
             )
             .Source(src => src
@@ -112,6 +112,8 @@ private static bool OnCertificateValidation(object sender, X509Certificate certi
     {
         public Guid file_id { get; set; }
         public string file_name { get; set; }
+        
+        [Keyword] 
         public string[] tags { get; set; }
         public string[] access_roles { get; set; }
         public string message { get; set; }

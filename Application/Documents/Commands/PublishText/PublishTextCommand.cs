@@ -47,6 +47,7 @@ namespace Application.Documents.Commands.PublishText
                     blobProperties.Value.Metadata.TryGetValue("file_name", out string? fileName);
                     blobProperties.Value.Metadata.TryGetValue("tags", out string? tags);
                     blobProperties.Value.Metadata.TryGetValue("access_roles", out string? accessRoles);
+                    blobProperties.Value.Metadata.TryGetValue("group", out string? group);
 
                     using (var engine = new TesseractEngine("C:/Program Files/Tesseract-OCR/tessdata", "eng",
                                EngineMode.Default))
@@ -78,7 +79,8 @@ namespace Application.Documents.Commands.PublishText
                             FileName = fileName,
                             Tags = tags.Split(','),
                             Message = text,
-                            AccessRoles = accessRoles.Split(',')
+                            AccessRoles = accessRoles.Split(','),
+                            Group = group
                         };
 
                         await _mediator.Publish(new TextPublishedEvent(document));

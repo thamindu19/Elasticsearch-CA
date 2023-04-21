@@ -11,8 +11,8 @@ public class UploadDocumentCommand : IRequest<Document>
 {
     public IFormFile File { get; set; }
     public string[] Tags { get; set; }
-    public string[] AccessRoles { get; set; 
-}
+    public string[] AccessRoles { get; set; }
+    public string Group { get; set; }
 
     public class UploadDocumentCommandHandler : IRequestHandler<UploadDocumentCommand, Document>
     {
@@ -38,11 +38,12 @@ public class UploadDocumentCommand : IRequest<Document>
             }
 
             IDictionary<string, string> metadata = new Dictionary<string, string>();
-            if (request.Tags != null)
+            if (request != null)
             {
                 metadata.Add("file_name", request.File.FileName);
                 metadata.Add("tags", request.Tags[0]);
                 metadata.Add("access_roles", request.AccessRoles[0]);
+                metadata.Add("group", request.Group);
             }
             await blobClient.SetMetadataAsync(metadata);
             
@@ -51,7 +52,8 @@ public class UploadDocumentCommand : IRequest<Document>
                 FileId = fileId,
                 FileName = request.File.FileName,
                 Tags = request.Tags[0].Split(','),
-                AccessRoles = request.AccessRoles[0].Split(',')
+                AccessRoles = request.AccessRoles[0].Split(','),
+                Group = request.Group
             };
         }
     }

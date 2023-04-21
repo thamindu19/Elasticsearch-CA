@@ -21,9 +21,11 @@ namespace Interfaces.API.Controllers
 
         [HttpPost]
         public async Task<ActionResult> UploadDocument([FromForm(Name = "file")] IFormFile file,
-            [FromForm(Name = "tags")] string[] tags, [FromForm(Name = "accessRoles")] string[] accessRoles)
+            [FromForm(Name = "tags")] string[] tags, [FromForm(Name = "accessRoles")] string[] accessRoles, [FromForm
+            (Name = "group")] string group)
         {
-            var result = await _mediator.Send(new UploadDocumentCommand() { File = file, Tags = tags, AccessRoles = accessRoles});
+            var result = await _mediator.Send(new UploadDocumentCommand() { File = file, Tags = tags, AccessRoles = 
+            accessRoles, Group = group});
             return Ok(result);
         }
 

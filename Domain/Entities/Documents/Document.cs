@@ -24,5 +24,8 @@ namespace Domain.Entities.Documents
         
         [JsonProperty("message")]
         public string Message { get; set; }
+        
+        [JsonProperty("group")]
+        public string Group { get; set; }
     }
 }

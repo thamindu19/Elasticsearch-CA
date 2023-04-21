@@ -19,12 +19,15 @@ namespace Interfaces.API.Controllers
 
         [HttpGet]
         public async Task<IActionResult> Search([FromQuery(Name = "message")] string message,
-            [FromQuery(Name = "tags")] string[] tags, [FromQuery(Name = "userRole")] string userRole)
+            [FromQuery(Name = "tags")] string[] tags, [FromQuery(Name = "userRole")] string userRole, [FromQuery(Name
+             = "group")] string group)
         {
             var documents = await _mediator.Send(new SearchTextQuery()
             {
-                Message = message, Tags = tags, UserRole =
-                    userRole
+                Message = message,
+                Tags = tags,
+                UserRole = userRole,
+                Group = group
             });
             return Ok(documents);
         }

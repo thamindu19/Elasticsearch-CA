@@ -49,6 +49,10 @@ namespace Interfaces.API
                                 {
                                     Type = "string"
                                 },
+                            },
+                            ["group"] = new OpenApiSchema()
+                            {
+                                Type = "string"
                             }
                         }
                     }
